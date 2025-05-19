@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { FaMicrophone } from 'react-icons/fa'; // Sesli arama ikonu
 import styles from './SearchBar.module.css';
 
 export default function SearchBar({ onSubmit }) {
@@ -26,11 +25,6 @@ export default function SearchBar({ onSubmit }) {
     setSearchTerm('');
   };
 
-  const handleVoiceSearch = () => {
-    // Sesli arama fonksiyonu (Opsiyonel: Web Speech API ile çalışabilir)
-    toast.info("Voice search is not implemented yet!");
-  };
-
   return (
     <header className={styles.header}>
       <Toaster position="top-right" reverseOrder={false} />
@@ -50,9 +44,6 @@ export default function SearchBar({ onSubmit }) {
           ) : (
             "Search"
           )}
-        </button>
-        <button type="button" className={styles.voiceButton} onClick={handleVoiceSearch}>
-          <FaMicrophone />
         </button>
       </form>
     </header>
